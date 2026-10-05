@@ -1,4 +1,4 @@
-# SONAR // Global Concert Turnout Intelligence & Econometrics
+# Scanalytical // Global Concert Turnout Intelligence & Econometrics
 
 An end-to-end data science, machine learning, and web visualization project analyzing the factors governing audience turnout across **1,829 concert dates** worldwide, representing **86.97 million tickets sold** and **$11.70 billion** in global box office revenue.
 
@@ -136,3 +136,5 @@ NoSql Project/
 - **Ed Sheeran Tour Boxscore**: Kaggle (`jessalynlim/ed-sheeran-tour`)
 - **Oasis Live '25**: Kaggle (`rodolfobrandao95/oasis-live-25`)
 - **Billboard Boxscore & Pollstar**: Tour archives for Coldplay, Beyoncé, Harry Styles, The Weeknd, U2, Elton John.
+
+Made by Shreyas and Shravan
