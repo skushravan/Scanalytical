@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scanalytical — Global Concert Turnout Intelligence</title>
+  
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Custom Dark Theme CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">S</div>
+        <div class="brand-info">
+          <div class="brand-title">Scanalytical <span class="brand-tag">// LIVE MUSIC INTELLIGENCE</span></div>
+        </div>
+        <span class="brand-badge">v2.4 DATA ENGINE</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#factors">Factors</a>
+        <a href="#map">World Map</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#data-explorer">Data Explorer</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#data-explorer" class="nav-btn">
+          <span>Export Data</span> &darr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="overview">
+    <div class="container hero-content">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>2,703 CONCERTS &middot; 36 ARTISTS ACROSS 6 CONTINENTS</span>
+      </div>
+      <h1 class="hero-title">Factors Influencing Worldwide Concert Turnout</h1>
+      <p class="hero-subtitle">
+        An empirical econometrics and machine learning investigation into live music attendance, star-power premiums, ticket price elasticity, city market tiers, and post-COVID super-cycles.
+      </p>
+
+      <!-- KPI Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Concerts Analyzed</div>
+          <div class="metric-val" id="metric-total-shows">2,703</div>
+          <div class="metric-sub up">&uarr; 36 Diverse Artists</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Global Attendance</div>
+          <div class="metric-val" id="metric-total-attendance">99.52M</div>
+          <div class="metric-sub">Total Tickets Sold</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Box Office Gross</div>
+          <div class="metric-val" id="metric-total-gross">$13.31B</div>
+          <div class="metric-sub">Worldwide Boxscore</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Mean Show Turnout</div>
+          <div class="metric-val" id="metric-avg-turnout">36,817</div>
+          <div class="metric-sub">Attendees per Concert</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Capacity Occupancy</div>
+          <div class="metric-val" id="metric-avg-occupancy">88.16%</div>
+          <div class="metric-sub up">Full Variance: 35% &ndash; 100%</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Avg Ticket Price</div>
+          <div class="metric-val" id="metric-avg-price">$119.15</div>
+          <div class="metric-sub">Weighted Global Mean</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Factors Section -->
+  <section class="container" id="factors" style="margin-bottom: 64px;">
+    <div class="section-header">
+      <div class="section-tag">// FACTOR ANALYSIS &amp; ECONOMETRIC FINDINGS</div>
+      <h2 class="section-title">The True Drivers of Concert Turnout &amp; Fill Rate</h2>
+      <p class="section-desc">
+        Moving beyond physical venue constraints, our empirical research identifies the 6 behavioral, economic, and cultural factors that actually govern ticket demand and venue fill rates worldwide.
+      </p>
+    </div>
+
+    <!-- Factor Navigation Tabs -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-artist-tier">1. Artist Fame &amp; Tier</button>
+      <button class="tab-btn" data-tab="tab-price">2. Ticket Price &amp; Economics</button>
+      <button class="tab-btn" data-tab="tab-market-tier">3. City Market Tier</button>
+      <button class="tab-btn" data-tab="tab-genre">4. Musical Genre &amp; Appeal</button>
+      <button class="tab-btn" data-tab="tab-timeline">5. Macroeconomic Timeline</button>
+      <button class="tab-btn" data-tab="tab-temporal">6. Day of Week &amp; Seasonality</button>
+      <button class="tab-btn" data-tab="tab-ml">7. ML Predictive Ranking</button>
+    </div>
+
+    <!-- TAB 1: Artist Fame & Tier -->
+    <div class="tab-pane active" id="tab-artist-tier">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Artist Fame Tier vs. Average Venue Occupancy Rate</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">The primary demand engine: club acts vs stadium headliners vs megastars</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart3_artist_tier.png">View Python Bar Plot &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-artist-tier"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Primary Driver // The Star-Power Premium</div>
+            <h3 class="insight-heading">Artist Tier Dictates Fill Rate More Than Any Other Factor</h3>
+          </div>
+          <div class="insight-body">
+            Venue size is merely a physical vessel; audience draw is generated by artist cultural capital. Emerging artists in intimate venues average <strong>60.3% occupancy</strong>, while Global Mega-Superstars and Legendary Reunions achieve <strong>95.8% &ndash; 99.2% sellouts</strong> even when scaling into 80,000-seat stadiums at premium ticket pricing.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Emerging Artist Avg Occupancy</span>
+                <span class="stat-box-value">60.27%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Mid-Tier Touring Artist Occ.</span>
+                <span class="stat-box-value">77.07%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Global Mega-Superstar Occ.</span>
+                <span class="stat-box-value">95.83%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Legendary Reunion (Oasis) Occ.</span>
+                <span class="stat-box-value">99.16%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Ticket Price Elasticity -->
+    <div class="tab-pane" id="tab-price">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Ticket Pricing Tiers: Turnout Resilience vs. Gross Yield</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Assessing consumer price elasticity of demand across live music tiers</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart2_price_elasticity.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-price"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Economic Dynamics // Price Elasticity</div>
+            <h3 class="insight-heading">Super-Fan Inelasticity at Premium Price Points</h3>
+          </div>
+          <div class="insight-body">
+            Unlike standard consumer goods, premium live experiences exhibit high price inelasticity among core fanbases. Average attendance scales alongside ticket pricing, as higher price points reflect stadium-scale spectacle. While budget shows (<$75) average 14,000 attendees, VIP tiers ($250+) generate the highest gross yield without sacrificing fill rates.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Budget Tier (&lt;$75) Mean Turnout</span>
+                <span class="stat-box-value">14,280 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Standard ($75-$150) Mean Turnout</span>
+                <span class="stat-box-value">46,840 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">VIP / Luxury (&gt;$250) Mean Turnout</span>
+                <span class="stat-box-value">63,120 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Global Gross Yield</span>
+                <span class="stat-box-value">$13.31 Billion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: City Market Tier -->
+    <div class="tab-pane" id="tab-market-tier">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">City Market Tier vs. Venue Fill Rate</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Tier 1 global megacities vs Tier 2 regional hubs vs Tier 3 secondary markets</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart5_market_tier.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-market-tier"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Geographic Depth // Urban Market Power</div>
+            <h3 class="insight-heading">Global Megacities Command 93% Fill Rates</h3>
+          </div>
+          <div class="insight-body">
+            Geography's true influence operates through <strong>urban demand depth</strong>, not continent boundaries. Tier 1 Global Megacities (New York, London, Tokyo, S&atilde;o Paulo) command <strong>92.95% average occupancy</strong> thanks to vast population density, public transit connectivity, and traveling tourist inflows. Secondary markets experience a notable 17.8 percentage-point drop.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Tier 1 Global Mega-City Fill Rate</span>
+                <span class="stat-box-value">92.95%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Tier 2 Major Regional Market</span>
+                <span class="stat-box-value">87.83%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Tier 3 Emerging / Secondary</span>
+                <span class="stat-box-value">75.17%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Tier 1 vs Tier 3 Spread</span>
+                <span class="stat-box-value">+17.78% Advantage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: Musical Genre & Appeal -->
+    <div class="tab-pane" id="tab-genre">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Musical Genre vs. Average Venue Occupancy Rate</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Broad demographic streaming giants vs targeted genre audiences</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart6_genre_artist_comparison.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-genre"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Cultural Reach // Genre Demographics</div>
+            <h3 class="insight-heading">Pop &amp; Britpop Lead Fill Rates; Niche Indie Faces Venue Sizing Challenges</h3>
+          </div>
+          <div class="insight-body">
+            Mainstream Pop, Britpop, and Latin/Reggaeton benefit from universal streaming reach, driving fill rates above <strong>90%</strong>. In contrast, Indie Rock and Folk artists have dedicated followings that pack intimate theaters (70&ndash;80% fill), but experience lower fill rates when booked into oversized arenas &mdash; highlighting the critical importance of promoter venue right-sizing.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Top Genre Fill Rate</span>
+                <span class="stat-box-value">Britpop / Rock (99.2%)</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Mainstream Pop Fill Rate</span>
+                <span class="stat-box-value">93.4%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Indie Rock / Folk Fill Rate</span>
+                <span class="stat-box-value">62.8%</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Total Genres Represented</span>
+                <span class="stat-box-value">24 Styles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: Macroeconomic Timeline -->
+    <div class="tab-pane" id="tab-timeline">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Macroeconomic Touring Timeline (2009 &ndash; 2025)</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Historical evolution, the 2020-21 COVID disruption, and the post-pandemic super-cycle</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart8_timeline_evolution.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-timeline"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Macro Environment // Historical Super-Cycle</div>
+            <h3 class="insight-heading">Post-2022 Live Music Super-Cycle Shatters Historical Records</h3>
+          </div>
+          <div class="insight-body">
+            The touring industry exhibits three distinct macroeconomic eras: the steady growth of 2009&ndash;2019, the catastrophic <strong>COVID-19 shutdown (2020&ndash;2021)</strong> with near-zero activity, and the explosive <strong>2023&ndash;2025 live music super-cycle</strong>. Pent-up demand, experiential consumer spending, and multi-generational fan engagement drove mean turnout to an unprecedented peak.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Pre-Pandemic (2018-19) Avg</span>
+                <span class="stat-box-value">38,400 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Pandemic Trough (2020-21)</span>
+                <span class="stat-box-value">Near-Total Halt</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Super-Cycle Peak (2023-24)</span>
+                <span class="stat-box-value">54,200 fans / show</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Super-Cycle Growth vs 2018</span>
+                <span class="stat-box-value">+41.1% Increase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: Day of Week & Seasonality -->
+    <div class="tab-pane" id="tab-temporal">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Audience Turnout Across Days of the Week &amp; Seasons</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Weekend leisure clustering vs midweek fill rates</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart4_day_of_week_seasonality.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-dayofweek"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Calendar Patterns // Temporal Dynamics</div>
+            <h3 class="insight-heading">Weekend Leisure Concentration Drives Peak Attendance</h3>
+          </div>
+          <div class="insight-body">
+            Over <strong>61% of all concerts</strong> are scheduled between Friday and Sunday. Weekend shows benefit from regional travel, social group attendance, and flexible consumer schedules, achieving higher average turnout. However, for elite stadium residencies, midweek dates retain strong occupancy due to massive ticket scarcity.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Saturday Mean Turnout</span>
+                <span class="stat-box-value">41,200 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Friday Mean Turnout</span>
+                <span class="stat-box-value">39,850 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Midweek (Tue/Wed) Mean Turnout</span>
+                <span class="stat-box-value">29,400 fans</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Weekend Premium</span>
+                <span class="stat-box-value">+35.5% Turnout Boost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: Machine Learning Feature Importance -->
+    <div class="tab-pane" id="tab-ml">
+      <div class="factor-card-grid">
+        <div class="chart-panel">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Random Forest Regressor Feature Importance Ranking</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">Quantifying the mathematical predictive weight of each factor</span>
+            </div>
+            <a href="#" class="chart-badge" data-zoom-chart="assets/charts/chart7_ml_feature_importance.png">View High-Res Chart &nearr;</a>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-ml-importance"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-header">
+            <div class="insight-subtitle">Model Evaluation // Fill Rate Prediction (Un-Biased)</div>
+            <h3 class="insight-heading">Eliminating Capacity Target Leakage Reveals True Drivers</h3>
+          </div>
+          <div class="insight-body">
+            When models predict raw attendance while including venue capacity as an input, capacity artificially consumes <strong>&gt;98% of feature splits</strong> due to target leakage (attendance &approx; capacity). By training our 150-tree Random Forest to predict <strong>Venue Fill Rate (%)</strong> without capacity in the feature vector, the model reveals the true hierarchy of demand: <strong>Venue Scale (27.8%)</strong>, <strong>Artist Fame Tier (21.0%)</strong>, <strong>Genre (13.1%)</strong>, <strong>Calendar Timing (11.4%)</strong>, <strong>Ticket Price (9.7%)</strong>, and <strong>Market Depth (9.6%)</strong>.
+          </div>
+          <div>
+            <div class="insight-stat-box">
+              <div class="stat-box-row">
+                <span class="stat-box-label">Algorithm</span>
+                <span class="stat-box-value">Random Forest (150 Trees)</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Target Variable</span>
+                <span class="stat-box-value">Venue Fill Rate (%)</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Model Accuracy (R²)</span>
+                <span class="stat-box-value">0.7523 (Un-Biased)</span>
+              </div>
+              <div class="stat-box-row">
+                <span class="stat-box-label">Mean Absolute Error</span>
+                <span class="stat-box-value">&plusmn;4.55% Fill Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Geospatial Map Section -->
+  <section class="container map-section" id="map">
+    <div class="section-header">
+      <div class="section-tag">// GEOSPATIAL INTELLIGENCE</div>
+      <h2 class="section-title">Worldwide Concert Tour Turnout Map</h2>
+      <p class="section-desc">
+        Interact with global concert stops. Circle sizes represent audience attendance; click any point to view venue, box office financials, and occupancy statistics.
+      </p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-controls-bar">
+        <div class="filter-group">
+          <span class="filter-label">Filter Continent:</span>
+          <select class="filter-select" id="map-filter-continent">
+            <option value="all">All Continents</option>
+            <option value="North America">North America</option>
+            <option value="Europe">Europe</option>
+            <option value="Latin America">Latin America</option>
+            <option value="Asia">Asia</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Filter Artist:</span>
+          <select class="filter-select" id="map-filter-artist">
+            <option value="all">All Artists</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Venue Type:</span>
+          <select class="filter-select" id="map-filter-venue">
+            <option value="all">All Venues</option>
+            <option value="Stadium">Stadiums</option>
+            <option value="Arena">Arenas</option>
+            <option value="Amphitheater / Park">Amphitheaters / Parks</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Basemap:</span>
+          <select class="filter-select" id="map-basemap-provider">
+            <option value="esri" selected>ESRI Dark Canvas (Clean &amp; Free)</option>
+            <option value="carto">CARTO Dark Matter (With API Key)</option>
+            <option value="osm_dark">OpenStreetMap Dark (Free)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="concert-map"></div>
+    </div>
+  </section>
+
+  <!-- What-If Simulator Section -->
+  <section class="container" id="simulator" style="margin-bottom: 64px;">
+    <div class="section-header">
+      <div class="section-tag">// PREDICTIVE SIMULATOR</div>
+      <h2 class="section-title">Audience Turnout & Box Office Calculator</h2>
+      <p class="section-desc">
+        Leverage our econometric regression model to simulate audience turnout, occupancy rates, and gross revenue based on venue capacity, ticket pricing, and market configuration.
+      </p>
+    </div>
+
+    <div class="sim-grid">
+      <!-- Input Controls -->
+      <div class="sim-input-panel">
+        <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:20px; color:var(--text-main);">Configure Tour Parameters</h3>
+
+        <!-- Venue Capacity -->
+        <div class="sim-control">
+          <div class="sim-control-label">
+            <span>Physical Venue Capacity</span>
+            <span class="sim-control-val" id="sim-val-capacity">65,000 seats</span>
+          </div>
+          <input type="range" class="sim-slider" id="sim-capacity" min="10000" max="110000" step="1000" value="65000">
+        </div>
+
+        <!-- Ticket Price -->
+        <div class="sim-control">
+          <div class="sim-control-label">
+            <span>Average Ticket Price (USD)</span>
+            <span class="sim-control-val" id="sim-val-price">$135</span>
+          </div>
+          <input type="range" class="sim-slider" id="sim-price" min="30" max="450" step="5" value="135">
+        </div>
+
+        <!-- Residency Nights -->
+        <div class="sim-control">
+          <div class="sim-control-label">
+            <span>Residency Density (Shows in City)</span>
+            <span class="sim-control-val" id="sim-val-residency">2 nights</span>
+          </div>
+          <input type="range" class="sim-slider" id="sim-residency" min="1" max="8" step="1" value="2">
+        </div>
+
+        <!-- Dropdowns -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div>
+            <label class="sim-control-label">Artist Brand Tier</label>
+            <select class="filter-select" id="sim-artist-tier" style="width:100%;">
+              <option value="superstar">Global Mega-Superstar (~96% occ)</option>
+              <option value="headliner">Stadium Headliner (~88% occ)</option>
+              <option value="arena">Major Touring Act (~85% occ)</option>
+              <option value="mid">Mid-Tier Touring Artist (~77% occ)</option>
+              <option value="emerging">Emerging / Club Artist (~60% occ)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="sim-control-label">Geographic Region</label>
+            <select class="filter-select" id="sim-continent" style="width:100%;">
+              <option value="North America">North America</option>
+              <option value="Europe">Europe</option>
+              <option value="Latin America">Latin America</option>
+              <option value="Asia">Asia</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <label class="sim-control-label">Schedule Slot</label>
+          <select class="filter-select" id="sim-day" style="width:100%;">
+            <option value="weekend">Friday / Saturday / Sunday (Weekend Peak)</option>
+            <option value="midweek">Tuesday / Wednesday / Thursday (Midweek)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Real-Time Output Predictions -->
+      <div class="sim-output-panel">
+        <div>
+          <div class="insight-subtitle" style="margin-bottom:8px;">Model Simulation Output</div>
+          <h3 style="font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:16px;">Predicted Tour Performance</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+            Calculated via trained Random Forest parameters and empirical price elasticity thresholds.
+          </p>
+        </div>
+
+        <div class="sim-output-metrics">
+          <div class="sim-out-box">
+            <div class="sim-out-label">Single Show Turnout</div>
+            <div class="sim-out-val" id="sim-out-turnout">64,870</div>
+          </div>
+
+          <div class="sim-out-box">
+            <div class="sim-out-label">Occupancy Rate</div>
+            <div class="sim-out-val highlight" id="sim-out-occupancy">99.8%</div>
+          </div>
+
+          <div class="sim-out-box">
+            <div class="sim-out-label">Total City Residency Draw</div>
+            <div class="sim-out-val" id="sim-out-residency-total">129,740</div>
+          </div>
+
+          <div class="sim-out-box">
+            <div class="sim-out-label">Estimated Gross Revenue</div>
+            <div class="sim-out-val highlight" id="sim-out-gross">$17.51M</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(15,23,42,0.9); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:14px 18px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.85rem; color:var(--text-muted);">Sellout Risk Status:</span>
+          <span id="sim-out-status" style="font-family:var(--font-mono); font-weight:700; color:var(--success);">Guaranteed Sellout (99%+)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Data Explorer Table -->
+  <section class="container data-table-section" id="data-explorer">
+    <div class="section-header">
+      <div class="section-tag">// DATA EXPLORER & REPOSITORY</div>
+      <h2 class="section-title">Worldwide Concert Tour Database</h2>
+      <p class="section-desc">
+        Search, inspect, and export all 2,703 cleaned concert box office records across artists, dates, venues, ticket prices, and occupancy rates.
+      </p>
+    </div>
+
+    <div class="table-toolbar">
+      <div class="search-input-box">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" class="search-input" id="table-search" placeholder="Search by Artist, City, Venue, or Tour...">
+      </div>
+
+      <div class="export-btns">
+        <button class="btn-secondary" id="btn-export-csv">&#128190; Export Cleaned CSV</button>
+        <button class="btn-secondary" id="btn-export-json">&#123; &#125; Export JSON</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th data-sort="artist">Artist &#8693;</th>
+            <th data-sort="tour">Tour &#8693;</th>
+            <th data-sort="city">City / Country &#8693;</th>
+            <th data-sort="venue">Venue &#8693;</th>
+            <th>Type</th>
+            <th data-sort="attendance">Turnout &#8693;</th>
+            <th data-sort="capacity">Capacity &#8693;</th>
+            <th data-sort="occupancy_rate">Occupancy &#8693;</th>
+            <th data-sort="gross_usd">Gross (USD) &#8693;</th>
+            <th data-sort="avg_ticket_price">Price &#8693;</th>
+            <th data-sort="date">Date &#8693;</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Populated by app.js -->
+        </tbody>
+      </table>
+
+      <div class="pagination-bar">
+        <div id="page-info">Showing 1 - 15 of 2,703 concerts</div>
+        <div class="pagination-controls">
+          <button class="page-btn" id="btn-prev">&larr; Previous</button>
+          <button class="page-btn" id="btn-next">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section class="container" id="methodology" style="margin-bottom: 64px;">
+    <div class="section-header">
+      <div class="section-tag">// DATA PROVENANCE & METHODOLOGY</div>
+      <h2 class="section-title">Rigorous Data Pipeline & Modeling Architecture</h2>
+    </div>
+
+    <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:32px; font-size:0.92rem; color:var(--text-muted); line-height:1.75;">
+      <h4 style="color:#fff; margin-bottom:8px; font-size:1.05rem;">1. Data Acquisition & Kaggle Provenance</h4>
+      <p style="margin-bottom:16px;">
+        This project ingests and unifies primary open datasets sourced from Kaggle:
+        <code style="color:var(--primary); font-family:var(--font-mono);">gayu14/taylor-concert-tours-impact-on-attendance-and</code> (historical world tours),
+        <code style="color:var(--primary); font-family:var(--font-mono);">tymonbot/taylor-swift-eras-toure</code> (Eras Tour official ticket sales & coordinates),
+        <code style="color:var(--primary); font-family:var(--font-mono);">jessalynlim/ed-sheeran-tour</code> (Mathematics Tour boxscores), and
+        <code style="color:var(--primary); font-family:var(--font-mono);">rodolfobrandao95/oasis-live-25</code> (Oasis Live '25 world tour financials).
+        These datasets were enriched with official Billboard Boxscore and Pollstar reporting tables for Coldplay, Beyoncé, Harry Styles, The Weeknd, U2, and Elton John to ensure global diversity across musical genres and venue structures.
+      </p>
+
+      <h4 style="color:#fff; margin-bottom:8px; font-size:1.05rem;">2. Data Harmonization & Rescaling</h4>
+      <p style="margin-bottom:16px;">
+        Multi-night residency boxscore aggregations (e.g. 10 shows reported as a single lump-sum boxscore) were algorithmically decomposed into single-show attendance, physical capacity per night, gross per show, and average ticket price. Geocoding was matched against a curated 320-city database assigning standard sovereign countries, continents, latitude/longitude, and market tiers.
+      </p>
+
+      <h4 style="color:#fff; margin-bottom:8px; font-size:1.05rem;">3. Predictive Machine Learning (Un-Biased Fill Rate Modeling)</h4>
+      <p>
+        To prevent target leakage where venue capacity artificially dwarfs all behavioral metrics (since attendance &approx; capacity &times; fill rate), our 150-tree Random Forest regressor is trained directly on <strong>Venue Fill Rate (%)</strong> without capacity in the feature vector. Evaluation on an 80/20 train/test split yielded an <strong>R&sup2; of 0.7523</strong> and an <strong>MAE of &plusmn;4.55%</strong>, uncovering the true causal hierarchy: Venue Scale (27.8%), Artist Star Power (21.0%), Genre Demographics (13.1%), Calendar Timing (11.4%), and Pricing Elasticity (9.7%).
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div style="font-weight:700; color:#fff; margin-bottom:6px; font-size:1.05rem;">Scanalytical // LIVE MUSIC INTELLIGENCE</div>
+          <p style="font-size:0.85rem; color:var(--text-dim);">
+            Advanced data science, econometric modeling, and visualization platform investigating global concert attendance dynamics.
+          </p>
+        </div>
+        <div>
+          <div style="font-size:0.8rem; font-weight:700; color:var(--text-main); text-transform:uppercase; margin-bottom:10px;">Quick Links</div>
+          <div style="display:flex; flex-direction:column; gap:6px; font-size:0.85rem;">
+            <a href="#overview" style="color:var(--text-muted); text-decoration:none;">Executive Summary</a>
+            <a href="#factors" style="color:var(--text-muted); text-decoration:none;">Factor Analysis</a>
+            <a href="#map" style="color:var(--text-muted); text-decoration:none;">Geospatial Map</a>
+            <a href="#simulator" style="color:var(--text-muted); text-decoration:none;">ML Simulator</a>
+            <a href="#data-explorer" style="color:var(--text-muted); text-decoration:none;">Raw Dataset</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Scanalytical Research &middot; Built with Python, Pandas, Scikit-Learn, Chart.js &amp; Leaflet &middot; Kaggle &amp; Boxscore Data
+        <br>
+        <span style="color:var(--primary); font-weight:600;">Made by Shravan &amp; Shreyas</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chart Zoom Modal -->
+  <div class="modal" id="chart-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <img src="" alt="High Resolution Chart" class="modal-img" id="modal-img">
+    </div>
+  </div>
+
+
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Data Bundle (Offline / Direct Browser Compatible) -->
+  <script src="js/data_bundle.js"></script>
+
+  <!-- Application Modules -->
+  <script src="js/charts.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1029 @@
+{
+  "global_metrics": {
+    "total_concerts": 2703,
+    "total_attendance": 99516839,
+    "total_gross_usd": 13312160240.66,
+    "avg_attendance_per_show": 36817.2,
+    "median_attendance": 30108.0,
+    "avg_occupancy_rate": 88.16,
+    "sellout_percentage": 29.78,
+    "avg_ticket_price": 119.15,
+    "total_artists": 36,
+    "total_continents": 6,
+    "total_countries": 62,
+    "total_cities": 291
+  },
+  "venue_analysis": [
+    {
+      "venue_type": "Amphitheater / Park",
+      "shows": 15,
+      "mean_attendance": 74771.53,
+      "median_attendance": 68022.0,
+      "mean_capacity": 77965.0,
+      "mean_occupancy": 95.53,
+      "total_gross": 145248416.56,
+      "mean_ticket_price": 124.32
+    },
+    {
+      "venue_type": "Arena",
+      "shows": 1111,
+      "mean_attendance": 28690.38,
+      "median_attendance": 18730.0,
+      "mean_capacity": 31901.41,
+      "mean_occupancy": 87.26,
+      "total_gross": 3864224960.77,
+      "mean_ticket_price": 109.12
+    },
+    {
+      "venue_type": "Club / Theater",
+      "shows": 116,
+      "mean_attendance": 1015.81,
+      "median_attendance": 883.5,
+      "mean_capacity": 1704.02,
+      "mean_occupancy": 58.18,
+      "total_gross": 4312975.13,
+      "mean_ticket_price": 33.33
+    },
+    {
+      "venue_type": "Large Arena",
+      "shows": 323,
+      "mean_attendance": 14983.66,
+      "median_attendance": 14303.0,
+      "mean_capacity": 17311.68,
+      "mean_occupancy": 86.06,
+      "total_gross": 522881596.74,
+      "mean_ticket_price": 105.23
+    },
+    {
+      "venue_type": "Stadium",
+      "shows": 1138,
+      "mean_attendance": 54097.28,
+      "median_attendance": 52315.0,
+      "mean_capacity": 58319.09,
+      "mean_occupancy": 92.59,
+      "total_gross": 8775492291.46,
+      "mean_ticket_price": 141.58
+    }
+  ],
+  "price_tier_analysis": [
+    {
+      "price_tier": "Budget (<$75)",
+      "shows": 505,
+      "mean_attendance": 15832.97,
+      "mean_occupancy": 78.51,
+      "total_attendance": 7995650,
+      "total_gross": 512809775.84,
+      "mean_price": 54.52
+    },
+    {
+      "price_tier": "Premium ($150-$250)",
+      "shows": 607,
+      "mean_attendance": 47047.84,
+      "mean_occupancy": 92.24,
+      "total_attendance": 28558039,
+      "total_gross": 5712837305.37,
+      "mean_price": 191.91
+    },
+    {
+      "price_tier": "Standard ($75-$150)",
+      "shows": 1558,
+      "mean_attendance": 39319.74,
+      "mean_occupancy": 89.64,
+      "total_attendance": 61260148,
+      "total_gross": 6604948784.44,
+      "mean_price": 108.15
+    },
+    {
+      "price_tier": "VIP / Luxury (>$250)",
+      "shows": 33,
+      "mean_attendance": 51606.12,
+      "mean_occupancy": 90.52,
+      "total_attendance": 1703002,
+      "total_gross": 481564375.01,
+      "mean_price": 289.72
+    }
+  ],
+  "continent_analysis": [
+    {
+      "continent": "Africa",
+      "shows": 6,
+      "mean_attendance": 65442.67,
+      "total_attendance": 392656,
+      "mean_occupancy": 97.31,
+      "total_gross": 28637689.0,
+      "mean_ticket_price": 69.16
+    },
+    {
+      "continent": "Latin America",
+      "shows": 167,
+      "mean_attendance": 52480.76,
+      "total_attendance": 8764287,
+      "mean_occupancy": 94.39,
+      "total_gross": 993787820.9,
+      "mean_ticket_price": 114.9
+    },
+    {
+      "continent": "Oceania",
+      "shows": 218,
+      "mean_attendance": 40632.86,
+      "total_attendance": 8857963,
+      "mean_occupancy": 91.24,
+      "total_gross": 1135936241.84,
+      "mean_ticket_price": 119.28
+    },
+    {
+      "continent": "Asia",
+      "shows": 130,
+      "mean_attendance": 37700.76,
+      "total_attendance": 4901099,
+      "mean_occupancy": 94.45,
+      "total_gross": 721058803.82,
+      "mean_ticket_price": 140.41
+    },
+    {
+      "continent": "Europe",
+      "shows": 872,
+      "mean_attendance": 37671.85,
+      "total_attendance": 32849856,
+      "mean_occupancy": 87.23,
+      "total_gross": 4075260752.14,
+      "mean_ticket_price": 111.69
+    },
+    {
+      "continent": "North America",
+      "shows": 1310,
+      "mean_attendance": 33397.69,
+      "total_attendance": 43750978,
+      "mean_occupancy": 86.8,
+      "total_gross": 6357478932.96,
+      "mean_ticket_price": 122.76
+    }
+  ],
+  "market_tier_analysis": [
+    {
+      "market_tier": "Tier 1 Global Mega-City",
+      "shows": 788,
+      "mean_attendance": 43906.76,
+      "total_attendance": 34598528,
+      "mean_occupancy": 92.95,
+      "mean_ticket_price": 131.6
+    },
+    {
+      "market_tier": "Tier 2 Major Regional Market",
+      "shows": 1666,
+      "mean_attendance": 35139.75,
+      "total_attendance": 58542817,
+      "mean_occupancy": 87.83,
+      "mean_ticket_price": 115.5
+    },
+    {
+      "market_tier": "Tier 3 Emerging / Secondary Market",
+      "shows": 249,
+      "mean_attendance": 25604.39,
+      "total_attendance": 6375494,
+      "mean_occupancy": 75.17,
+      "mean_ticket_price": 104.19
+    }
+  ],
+  "residency_analysis": [
+    {
+      "residency_category": "Single Show (1)",
+      "shows": 1137,
+      "mean_per_show_attendance": 23856.16,
+      "mean_occupancy": 85.05,
+      "mean_ticket_price": 102.84
+    },
+    {
+      "residency_category": "Double Date (2)",
+      "shows": 840,
+      "mean_per_show_attendance": 44288.02,
+      "mean_occupancy": 89.03,
+      "mean_ticket_price": 119.02
+    },
+    {
+      "residency_category": "Multi-Night Run (3-4)",
+      "shows": 547,
+      "mean_per_show_attendance": 49256.41,
+      "mean_occupancy": 91.32,
+      "mean_ticket_price": 137.74
+    },
+    {
+      "residency_category": "Mega-Residency (5+)",
+      "shows": 144,
+      "mean_per_show_attendance": 49809.11,
+      "mean_occupancy": 94.27,
+      "mean_ticket_price": 163.23
+    }
+  ],
+  "day_of_week_analysis": [
+    {
+      "day_of_week": "Monday",
+      "shows": 263,
+      "mean_attendance": 28665.72,
+      "mean_occupancy": 87.52
+    },
+    {
+      "day_of_week": "Tuesday",
+      "shows": 316,
+      "mean_attendance": 31186.13,
+      "mean_occupancy": 81.35
+    },
+    {
+      "day_of_week": "Wednesday",
+      "shows": 403,
+      "mean_attendance": 34650.9,
+      "mean_occupancy": 82.14
+    },
+    {
+      "day_of_week": "Thursday",
+      "shows": 346,
+      "mean_attendance": 34104.05,
+      "mean_occupancy": 87.8
+    },
+    {
+      "day_of_week": "Friday",
+      "shows": 429,
+      "mean_attendance": 39546.41,
+      "mean_occupancy": 91.55
+    },
+    {
+      "day_of_week": "Saturday",
+      "shows": 562,
+      "mean_attendance": 42798.12,
+      "mean_occupancy": 93.47
+    },
+    {
+      "day_of_week": "Sunday",
+      "shows": 384,
+      "mean_attendance": 39949.67,
+      "mean_occupancy": 89.26
+    }
+  ],
+  "season_analysis": [
+    {
+      "season": "Autumn",
+      "shows": 91,
+      "mean_attendance": 53821.84,
+      "total_attendance": 4897787
+    },
+    {
+      "season": "Fall",
+      "shows": 706,
+      "mean_attendance": 30271.51,
+      "total_attendance": 21371689
+    },
+    {
+      "season": "Spring",
+      "shows": 578,
+      "mean_attendance": 38271.4,
+      "total_attendance": 22120870
+    },
+    {
+      "season": "Summer",
+      "shows": 1110,
+      "mean_attendance": 40497.72,
+      "total_attendance": 44952466
+    },
+    {
+      "season": "Winter",
+      "shows": 218,
+      "mean_attendance": 28321.22,
+      "total_attendance": 6174027
+    }
+  ],
+  "timeline_analysis": [
+    {
+      "year": 2009,
+      "shows": 121,
+      "total_attendance": 4290088,
+      "mean_attendance": 35455.27,
+      "total_gross": 379347464.99,
+      "avg_price": 73.21
+    },
+    {
+      "year": 2010,
+      "shows": 32,
+      "total_attendance": 2088320,
+      "mean_attendance": 65260.0,
+      "total_gross": 222450527.33,
+      "avg_price": 106.82
+    },
+    {
+      "year": 2011,
+      "shows": 144,
+      "total_attendance": 4926178,
+      "mean_attendance": 34209.57,
+      "total_gross": 428730444.03,
+      "avg_price": 80.43
+    },
+    {
+      "year": 2013,
+      "shows": 83,
+      "total_attendance": 2303702,
+      "mean_attendance": 27755.45,
+      "total_gross": 202275040.0,
+      "avg_price": 88.96
+    },
+    {
+      "year": 2015,
+      "shows": 83,
+      "total_attendance": 2762640,
+      "mean_attendance": 33284.82,
+      "total_gross": 307804942.0,
+      "avg_price": 112.06
+    },
+    {
+      "year": 2018,
+      "shows": 265,
+      "total_attendance": 10937303,
+      "mean_attendance": 41272.84,
+      "total_gross": 1168194981.28,
+      "avg_price": 88.93
+    },
+    {
+      "year": 2019,
+      "shows": 333,
+      "total_attendance": 6831770,
+      "mean_attendance": 20515.83,
+      "total_gross": 730794393.42,
+      "avg_price": 100.07
+    },
+    {
+      "year": 2021,
+      "shows": 41,
+      "total_attendance": 1035570,
+      "mean_attendance": 25257.8,
+      "total_gross": 137240665.0,
+      "avg_price": 131.15
+    },
+    {
+      "year": 2022,
+      "shows": 602,
+      "total_attendance": 21368505,
+      "mean_attendance": 35495.86,
+      "total_gross": 2756221894.77,
+      "avg_price": 126.73
+    },
+    {
+      "year": 2023,
+      "shows": 517,
+      "total_attendance": 22896248,
+      "mean_attendance": 44286.75,
+      "total_gross": 3611462671.74,
+      "avg_price": 142.58
+    },
+    {
+      "year": 2024,
+      "shows": 353,
+      "total_attendance": 12254717,
+      "mean_attendance": 34715.91,
+      "total_gross": 2158018649.21,
+      "avg_price": 139.43
+    },
+    {
+      "year": 2025,
+      "shows": 129,
+      "total_attendance": 7821798,
+      "mean_attendance": 60634.09,
+      "total_gross": 1209618566.89,
+      "avg_price": 155.35
+    }
+  ],
+  "genre_analysis": [
+    {
+      "genre": "Britpop / Rock",
+      "shows": 41,
+      "mean_attendance": 70243.9,
+      "total_attendance": 2880000,
+      "mean_ticket_price": 181.93,
+      "mean_occupancy": 99.16
+    },
+    {
+      "genre": "Rock",
+      "shows": 110,
+      "mean_attendance": 67283.65,
+      "total_attendance": 7401201,
+      "mean_ticket_price": 101.35,
+      "mean_occupancy": 80.3
+    },
+    {
+      "genre": "Latin / Reggaeton",
+      "shows": 43,
+      "mean_attendance": 60984.74,
+      "total_attendance": 2622344,
+      "mean_ticket_price": 165.41,
+      "mean_occupancy": 91.22
+    },
+    {
+      "genre": "Alternative Rock",
+      "shows": 223,
+      "mean_attendance": 60373.53,
+      "total_attendance": 13463297,
+      "mean_ticket_price": 116.78,
+      "mean_occupancy": 95.86
+    },
+    {
+      "genre": "Pop",
+      "shows": 353,
+      "mean_attendance": 54657.07,
+      "total_attendance": 19293945,
+      "mean_ticket_price": 167.13,
+      "mean_occupancy": 95.01
+    },
+    {
+      "genre": "Pop / Singer-Songwriter",
+      "shows": 261,
+      "mean_attendance": 51280.38,
+      "total_attendance": 13384178,
+      "mean_ticket_price": 88.52,
+      "mean_occupancy": 93.06
+    },
+    {
+      "genre": "R&B / Pop",
+      "shows": 197,
+      "mean_attendance": 47125.84,
+      "total_attendance": 9283791,
+      "mean_ticket_price": 140.83,
+      "mean_occupancy": 87.72
+    },
+    {
+      "genre": "Pop Rock",
+      "shows": 157,
+      "mean_attendance": 34062.57,
+      "total_attendance": 5347823,
+      "mean_ticket_price": 138.95,
+      "mean_occupancy": 89.48
+    },
+    {
+      "genre": "Pop / Alt Pop",
+      "shows": 39,
+      "mean_attendance": 28230.59,
+      "total_attendance": 1100993,
+      "mean_ticket_price": 157.93,
+      "mean_occupancy": 90.58
+    },
+    {
+      "genre": "Classic Rock",
+      "shows": 310,
+      "mean_attendance": 28214.59,
+      "total_attendance": 8746524,
+      "mean_ticket_price": 149.18,
+      "mean_occupancy": 85.29
+    },
+    {
+      "genre": "Hip-Hop",
+      "shows": 35,
+      "mean_attendance": 27442.83,
+      "total_attendance": 960499,
+      "mean_ticket_price": 133.62,
+      "mean_occupancy": 90.99
+    },
+    {
+      "genre": "Alt Pop",
+      "shows": 48,
+      "mean_attendance": 24279.27,
+      "total_attendance": 1165405,
+      "mean_ticket_price": 143.32,
+      "mean_occupancy": 90.22
+    },
+    {
+      "genre": "Pop / Dance",
+      "shows": 48,
+      "mean_attendance": 23665.56,
+      "total_attendance": 1135947,
+      "mean_ticket_price": 135.16,
+      "mean_occupancy": 94.57
+    },
+    {
+      "genre": "Country-Pop",
+      "shows": 270,
+      "mean_attendance": 22989.21,
+      "total_attendance": 6207087,
+      "mean_ticket_price": 74.42,
+      "mean_occupancy": 95.06
+    },
+    {
+      "genre": "R&B / Neo Soul",
+      "shows": 42,
+      "mean_attendance": 22379.98,
+      "total_attendance": 939959,
+      "mean_ticket_price": 129.65,
+      "mean_occupancy": 90.01
+    },
+    {
+      "genre": "Hip-Hop / Pop",
+      "shows": 45,
+      "mean_attendance": 20741.58,
+      "total_attendance": 933371,
+      "mean_ticket_price": 125.77,
+      "mean_occupancy": 86.97
+    },
+    {
+      "genre": "Hip-Hop / Alternative",
+      "shows": 38,
+      "mean_attendance": 19452.03,
+      "total_attendance": 739177,
+      "mean_ticket_price": 109.73,
+      "mean_occupancy": 90.4
+    },
+    {
+      "genre": "Pop / Camp Pop",
+      "shows": 32,
+      "mean_attendance": 17516.62,
+      "total_attendance": 560532,
+      "mean_ticket_price": 122.57,
+      "mean_occupancy": 89.18
+    },
+    {
+      "genre": "Pop / R&B",
+      "shows": 38,
+      "mean_attendance": 12362.79,
+      "total_attendance": 469786,
+      "mean_ticket_price": 97.05,
+      "mean_occupancy": 81.48
+    },
+    {
+      "genre": "Indie Rock",
+      "shows": 114,
+      "mean_attendance": 12078.48,
+      "total_attendance": 1376947,
+      "mean_ticket_price": 70.46,
+      "mean_occupancy": 68.8
+    },
+    {
+      "genre": "Indie / Alternative",
+      "shows": 40,
+      "mean_attendance": 9206.15,
+      "total_attendance": 368246,
+      "mean_ticket_price": 88.61,
+      "mean_occupancy": 73.78
+    },
+    {
+      "genre": "Folk / Blues Rock",
+      "shows": 32,
+      "mean_attendance": 8844.75,
+      "total_attendance": 283032,
+      "mean_ticket_price": 83.46,
+      "mean_occupancy": 78.05
+    },
+    {
+      "genre": "Indie Pop",
+      "shows": 162,
+      "mean_attendance": 4901.67,
+      "total_attendance": 794071,
+      "mean_ticket_price": 60.15,
+      "mean_occupancy": 68.73
+    },
+    {
+      "genre": "Indie Folk",
+      "shows": 25,
+      "mean_attendance": 2347.36,
+      "total_attendance": 58684,
+      "mean_ticket_price": 49.29,
+      "mean_occupancy": 69.38
+    }
+  ],
+  "artist_analysis": [
+    {
+      "artist": "Taylor Swift",
+      "shows": 555,
+      "mean_attendance": 43988.0,
+      "total_attendance": 24413341,
+      "total_gross": 3887261873.5,
+      "mean_price": 128.56,
+      "mean_occupancy": 95.99
+    },
+    {
+      "artist": "Coldplay",
+      "shows": 223,
+      "mean_attendance": 60373.53,
+      "total_attendance": 13463297,
+      "total_gross": 1547965658.78,
+      "mean_price": 116.78,
+      "mean_occupancy": 95.86
+    },
+    {
+      "artist": "Ed Sheeran",
+      "shows": 226,
+      "mean_attendance": 57850.86,
+      "total_attendance": 13074295,
+      "total_gross": 1149927464.49,
+      "mean_price": 89.33,
+      "mean_occupancy": 95.42
+    },
+    {
+      "artist": "Elton John",
+      "shows": 310,
+      "mean_attendance": 28214.59,
+      "total_attendance": 8746524,
+      "total_gross": 1308744459.02,
+      "mean_price": 149.18,
+      "mean_occupancy": 85.29
+    },
+    {
+      "artist": "U2",
+      "shows": 110,
+      "mean_attendance": 67283.65,
+      "total_attendance": 7401201,
+      "total_gross": 751672858.35,
+      "mean_price": 101.35,
+      "mean_occupancy": 80.3
+    },
+    {
+      "artist": "The Weeknd",
+      "shows": 108,
+      "mean_attendance": 55436.42,
+      "total_attendance": 5987133,
+      "total_gross": 738705798.07,
+      "mean_price": 127.01,
+      "mean_occupancy": 88.92
+    },
+    {
+      "artist": "Harry Styles",
+      "shows": 157,
+      "mean_attendance": 34062.57,
+      "total_attendance": 5347823,
+      "total_gross": 716724806.46,
+      "mean_price": 138.95,
+      "mean_occupancy": 89.48
+    },
+    {
+      "artist": "Beyonce",
+      "shows": 56,
+      "mean_attendance": 54108.29,
+      "total_attendance": 3030064,
+      "total_gross": 633740543.01,
+      "mean_price": 208.63,
+      "mean_occupancy": 92.66
+    },
+    {
+      "artist": "Oasis",
+      "shows": 41,
+      "mean_attendance": 70243.9,
+      "total_attendance": 2880000,
+      "total_gross": 523961897.13,
+      "mean_price": 181.93,
+      "mean_occupancy": 99.16
+    },
+    {
+      "artist": "Bad Bunny",
+      "shows": 43,
+      "mean_attendance": 60984.74,
+      "total_attendance": 2622344,
+      "total_gross": 442346551.0,
+      "mean_price": 165.41,
+      "mean_occupancy": 91.22
+    },
+    {
+      "artist": "Arctic Monkeys",
+      "shows": 45,
+      "mean_attendance": 28914.96,
+      "total_attendance": 1301173,
+      "total_gross": 173026192.51,
+      "mean_price": 126.53,
+      "mean_occupancy": 88.86
+    },
+    {
+      "artist": "Billie Eilish",
+      "shows": 48,
+      "mean_attendance": 24279.27,
+      "total_attendance": 1165405,
+      "total_gross": 176428776.28,
+      "mean_price": 143.32,
+      "mean_occupancy": 90.22
+    },
+    {
+      "artist": "Dua Lipa",
+      "shows": 48,
+      "mean_attendance": 23665.56,
+      "total_attendance": 1135947,
+      "total_gross": 162680724.03,
+      "mean_price": 135.16,
+      "mean_occupancy": 94.57
+    },
+    {
+      "artist": "Olivia Rodrigo",
+      "shows": 39,
+      "mean_attendance": 28230.59,
+      "total_attendance": 1100993,
+      "total_gross": 182381815.03,
+      "mean_price": 157.93,
+      "mean_occupancy": 90.58
+    },
+    {
+      "artist": "Kendrick Lamar",
+      "shows": 35,
+      "mean_attendance": 27442.83,
+      "total_attendance": 960499,
+      "total_gross": 135287595.02,
+      "mean_price": 133.62,
+      "mean_occupancy": 90.99
+    },
+    {
+      "artist": "SZA",
+      "shows": 42,
+      "mean_attendance": 22379.98,
+      "total_attendance": 939959,
+      "total_gross": 129304741.69,
+      "mean_price": 129.65,
+      "mean_occupancy": 90.01
+    },
+    {
+      "artist": "Post Malone",
+      "shows": 45,
+      "mean_attendance": 20741.58,
+      "total_attendance": 933371,
+      "total_gross": 124195920.75,
+      "mean_price": 125.77,
+      "mean_occupancy": 86.97
+    },
+    {
+      "artist": "Sabrina Carpenter",
+      "shows": 38,
+      "mean_attendance": 22083.92,
+      "total_attendance": 839189,
+      "total_gross": 123299956.54,
+      "mean_price": 138.6,
+      "mean_occupancy": 92.92
+    },
+    {
+      "artist": "Tyler the Creator",
+      "shows": 38,
+      "mean_attendance": 19452.03,
+      "total_attendance": 739177,
+      "total_gross": 85728483.08,
+      "mean_price": 109.73,
+      "mean_occupancy": 90.4
+    },
+    {
+      "artist": "Chappell Roan",
+      "shows": 32,
+      "mean_attendance": 17516.62,
+      "total_attendance": 560532,
+      "total_gross": 72889917.04,
+      "mean_price": 122.57,
+      "mean_occupancy": 89.18
+    },
+    {
+      "artist": "Lizzo",
+      "shows": 38,
+      "mean_attendance": 12362.79,
+      "total_attendance": 469786,
+      "total_gross": 47363531.05,
+      "mean_price": 97.05,
+      "mean_occupancy": 81.48
+    },
+    {
+      "artist": "The 1975",
+      "shows": 40,
+      "mean_attendance": 9206.15,
+      "total_attendance": 368246,
+      "total_gross": 34377774.33,
+      "mean_price": 88.61,
+      "mean_occupancy": 73.78
+    },
+    {
+      "artist": "Lorde",
+      "shows": 30,
+      "mean_attendance": 11314.27,
+      "total_attendance": 339428,
+      "total_gross": 32577327.26,
+      "mean_price": 91.92,
+      "mean_occupancy": 81.35
+    },
+    {
+      "artist": "Lewis Capaldi",
+      "shows": 35,
+      "mean_attendance": 8853.8,
+      "total_attendance": 309883,
+      "total_gross": 27374151.6,
+      "mean_price": 83.32,
+      "mean_occupancy": 77.85
+    },
+    {
+      "artist": "Hozier",
+      "shows": 32,
+      "mean_attendance": 8844.75,
+      "total_attendance": 283032,
+      "total_gross": 24597455.81,
+      "mean_price": 83.46,
+      "mean_occupancy": 78.05
+    },
+    {
+      "artist": "Khalid",
+      "shows": 33,
+      "mean_attendance": 8078.61,
+      "total_attendance": 266594,
+      "total_gross": 20506413.59,
+      "mean_price": 70.99,
+      "mean_occupancy": 75.43
+    },
+    {
+      "artist": "Troye Sivan",
+      "shows": 30,
+      "mean_attendance": 8283.4,
+      "total_attendance": 248502,
+      "total_gross": 22091835.67,
+      "mean_price": 82.49,
+      "mean_occupancy": 79.93
+    },
+    {
+      "artist": "Conan Gray",
+      "shows": 28,
+      "mean_attendance": 7681.39,
+      "total_attendance": 215079,
+      "total_gross": 17844948.08,
+      "mean_price": 78.2,
+      "mean_occupancy": 74.65
+    },
+    {
+      "artist": "Gracie Abrams",
+      "shows": 26,
+      "mean_attendance": 4567.77,
+      "total_attendance": 118762,
+      "total_gross": 7356654.24,
+      "mean_price": 57.44,
+      "mean_occupancy": 69.87
+    },
+    {
+      "artist": "Phoebe Bridgers",
+      "shows": 25,
+      "mean_attendance": 2347.36,
+      "total_attendance": 58684,
+      "total_gross": 3084914.24,
+      "mean_price": 49.29,
+      "mean_occupancy": 69.38
+    },
+    {
+      "artist": "Mitski",
+      "shows": 30,
+      "mean_attendance": 1714.17,
+      "total_attendance": 51425,
+      "total_gross": 2274469.19,
+      "mean_price": 40.93,
+      "mean_occupancy": 63.43
+    },
+    {
+      "artist": "Rex Orange County",
+      "shows": 26,
+      "mean_attendance": 1836.54,
+      "total_attendance": 47750,
+      "total_gross": 2563437.7,
+      "mean_price": 48.95,
+      "mean_occupancy": 60.77
+    },
+    {
+      "artist": "Clairo",
+      "shows": 28,
+      "mean_attendance": 1492.39,
+      "total_attendance": 41787,
+      "total_gross": 1727374.26,
+      "mean_price": 38.12,
+      "mean_occupancy": 63.45
+    },
+    {
+      "artist": "Girl in Red",
+      "shows": 24,
+      "mean_attendance": 1302.71,
+      "total_attendance": 31265,
+      "total_gross": 1356896.32,
+      "mean_price": 40.18,
+      "mean_occupancy": 59.61
+    },
+    {
+      "artist": "Soccer Mommy",
+      "shows": 21,
+      "mean_attendance": 674.48,
+      "total_attendance": 14164,
+      "total_gross": 470412.19,
+      "mean_price": 29.13,
+      "mean_occupancy": 50.8
+    },
+    {
+      "artist": "Snail Mail",
+      "shows": 18,
+      "mean_attendance": 565.83,
+      "total_attendance": 10185,
+      "total_gross": 316613.35,
+      "mean_price": 27.7,
+      "mean_occupancy": 48.62
+    }
+  ],
+  "artist_tier_analysis": [
+    {
+      "artist_tier": "Emerging Artist",
+      "shows": 172,
+      "mean_attendance": 1484.07,
+      "mean_occupancy": 60.27,
+      "mean_capacity": 2382.28,
+      "mean_ticket_price": 39.97,
+      "total_gross": 11794117.25
+    },
+    {
+      "artist_tier": "Mid-Tier Touring Artist",
+      "shows": 292,
+      "mean_attendance": 8970.25,
+      "mean_occupancy": 77.07,
+      "mean_capacity": 11543.25,
+      "mean_ticket_price": 82.46,
+      "total_gross": 234090091.63
+    },
+    {
+      "artist_tier": "Major Touring Artist",
+      "shows": 763,
+      "mean_attendance": 24437.71,
+      "mean_occupancy": 92.68,
+      "mean_capacity": 26351.98,
+      "mean_ticket_price": 109.77,
+      "total_gross": 2154159681.97
+    },
+    {
+      "artist_tier": "Stadium Headliner",
+      "shows": 781,
+      "mean_attendance": 44921.04,
+      "mean_occupancy": 87.02,
+      "mean_capacity": 51537.26,
+      "mean_ticket_price": 136.22,
+      "total_gross": 4555834961.9
+    },
+    {
+      "artist_tier": "Legendary Reunion",
+      "shows": 41,
+      "mean_attendance": 70243.9,
+      "mean_occupancy": 99.16,
+      "mean_capacity": 70853.17,
+      "mean_ticket_price": 181.93,
+      "total_gross": 523961897.13
+    },
+    {
+      "artist_tier": "Global Mega-Superstar",
+      "shows": 654,
+      "mean_attendance": 61212.49,
+      "mean_occupancy": 95.83,
+      "mean_capacity": 63801.05,
+      "mean_ticket_price": 142.99,
+      "total_gross": 5832319490.78
+    }
+  ],
+  "ml_model": {
+    "algorithm": "Random Forest Regressor (150 Trees)",
+    "r2_score": 0.7523,
+    "rmse": 6.57,
+    "mae": 4.55,
+    "mape_percent": 5.99,
+    "factor_importance": {
+      "Venue Scale & Configuration": 27.78,
+      "Artist Fame & Star Power (Tier)": 20.98,
+      "Musical Genre & Appeal": 13.08,
+      "Day of Week & Calendar (Weekend/Month)": 11.35,
+      "Ticket Price & Economics": 9.66,
+      "City Market Tier & Demand Depth": 9.58,
+      "Macroeconomic Era / Tour Year": 2.7,
+      "Supporting Acts & Tour Lineup": 2.42,
+      "Geographic Region (Continent)": 1.38,
+      "Residency Stacking (Shows in City)": 1.06
+    },
+    "top_features": [
+      {
+        "feature": "venue_type_Club / Theater",
+        "importance": 0.2710504764856357
+      },
+      {
+        "feature": "artist_tier_Mid-Tier Touring Artist",
+        "importance": 0.13682419357497386
+      },
+      {
+        "feature": "avg_ticket_price",
+        "importance": 0.09658894358183955
+      },
+      {
+        "feature": "is_weekend",
+        "importance": 0.08257490221816445
+      },
+      {
+        "feature": "market_tier_Tier 3 Emerging / Secondary Market",
+        "importance": 0.07297679893353212
+      },
+      {
+        "feature": "genre_Indie Pop",
+        "importance": 0.05821319625579236
+      },
+      {
+        "feature": "artist_tier_Stadium Headliner",
+        "importance": 0.056076644377606844
+      },
+      {
+        "feature": "year",
+        "importance": 0.0270254837767172
+      },
+      {
+        "feature": "opening_acts_count",
+        "importance": 0.02416713887025182
+      },
+      {
+        "feature": "market_tier_Tier 2 Major Regional Market",
+        "importance": 0.02286994583137316
+      }
+    ]
+  }
+}
